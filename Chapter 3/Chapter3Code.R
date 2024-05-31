@@ -285,7 +285,8 @@ print(subset)
 subset <- data_frame[1:3, c("name", "age")]
 print(subset)
 
-# Or perhaps we want, the first, third, and fifth rows and the name and height columns of the data frame
+# Or perhaps we want, the first, third, and fifth rows and the name and height 
+# columns of the data frame
 subset <- data_frame[c(1, 3, 5), c("name", "height")]
 print(subset)
 

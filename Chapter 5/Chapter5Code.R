@@ -15,7 +15,8 @@ head(df)
 
 ## Scatter Plots ----
 # Create a scatter plot of the 'Magic' and 'Level' variables
-plot(df$Level, df$Magic, main = "Magic vs Level", xlab = "Magic", ylab = "Level")
+plot(df$Level, df$Magic, main = "Magic vs Level",
+     xlab = "Magic", ylab = "Level")
 
 ## Histograms ----
 # Create a histogram of the 'Level' variable
@@ -27,14 +28,16 @@ boxplot(df$Magic, main = "Magic Distribution", xlab = "Magic")
 
 ## Bar Plots ----
 # Create a bar plot of the 'Class' variable
-barplot(table(df$Class), main = "Class Distribution", xlab = "Class", ylab = "Frequency")
+barplot(table(df$Class), main = "Class Distribution",
+        xlab = "Class", ylab = "Frequency")
 
 # ggplot2: A More Powerful Visualization Package ----
 
 ## The ggplot() function
 # Load the tidyverse package
 library(tidyverse)
-# or if you don't need to load all of the packages encapsulated in the tidyverse package, you can load the ggplot2 package alone
+# or if you don't need to load all of the packages encapsulated in the 
+# tidyverse package, you can load the ggplot2 package alone
 library(ggplot2)
 
 # Create a new ggplot object
@@ -49,18 +52,21 @@ ggplot(data = df, aes(x = Level, y = Magic)) +
   geom_point()
 
 ### The Smoothed Line Layer ----
-# Create a scatter plot of the 'Magic' and 'Level' variables using ggplot2 with a smoothed line layer
+# Create a scatter plot of the 'Magic' and 'Level' variables using ggplot2 
+# with a smoothed line layer
 ggplot(data = df, aes(x = Level, y = Magic)) +
   geom_point() +
   geom_smooth(method = "lm")
 
 ### The aes() Function ----
-# Create a scatter plot of the 'Magic' and 'Level' variables using ggplot2 with color aesthetic
+# Create a scatter plot of the 'Magic' and 'Level' variables using ggplot2 
+# with color aesthetic
 ggplot(data = df, aes(x = Level, y = Magic)) +
   geom_point(aes(color = Class)) +
   geom_smooth(method = "lm")
 
-# Create a scatter plot of the 'Magic' and 'Level' variables using ggplot2 with color aesthetic
+# Create a scatter plot of the 'Magic' and 'Level' variables using ggplot2 
+# with color aesthetic
 ggplot(data = df, aes(x = Level, y = Magic)) +
   geom_point() +
   geom_smooth(aes(color = Class), method = "lm")
@@ -75,11 +81,13 @@ ggplot(data = df, aes(x = Level)) +
 ggplot(data = df, aes(x = Level)) +
   geom_density()
 
-# Create a density plot of the 'Level' variable using ggplot2 with a fill aesthetic
+# Create a density plot of the 'Level' variable using ggplot2 with a 
+# fill aesthetic
 ggplot(data = df, aes(x = Level)) +
   geom_density(aes(fill = Class))
 
-# Create a density plot of the 'Level' variable using ggplot2 with a fill aesthetic and transparent colors
+# Create a density plot of the 'Level' variable using ggplot2 with a 
+# fill aesthetic and transparent colors
 ggplot(data = df, aes(x = Level)) +
   geom_density(aes(fill = Class), alpha = 0.2)
 
@@ -91,18 +99,21 @@ ggplot(data = df, aes(x = Level)) +
   facet_wrap(~ Class)
 
 ### facet_grid() ----
-# Create a faceted scatter plot of the 'Magic' and 'Level' variables using ggplot2
+# Create a faceted scatter plot of the 'Magic' and 'Level' variables 
+# using ggplot2
 ggplot(data = df, aes(x = Level, y = Magic)) +
   geom_point() +
   facet_grid(Class ~ .)
 
 ## Box Plots with ggplot2 ----
-# Create a box plot of the 'Magic' variable by the 'Class' variable using ggplot2
+# Create a box plot of the 'Magic' variable by the 'Class' variable 
+# using ggplot2
 ggplot(data = df, aes(x = Class, y = Magic)) +
   geom_boxplot()
 
 ## Violin Plots with ggplot2 ----
-# Create a violin plot of the 'Weapon' variable by the 'Class' variable using ggplot2
+# Create a violin plot of the 'Weapon' variable by the 'Class' variable 
+# using ggplot2
 ggplot(data = df, aes(x = Class, y = Weapon)) +
   geom_violin()
 
