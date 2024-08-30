@@ -89,6 +89,6 @@ acos(1)
 atan(1)
 
 ## Statistical functions ----
-mean(1, 2, 3, 4, 5)
+mean(c(1, 2, 3, 4, 5))
 min(1, 2, 3, 4, 5)
 max(1, 2, 3, 4, 5)
