@@ -303,14 +303,17 @@ print(subset)
 # View the first few rows of the data frame
 head(data_frame)
 
-# View the first 10 rows of the data frame
-head(data_frame, n = 10)
+# View the first 3 rows of the data frame
+head(data_frame, n = 3)
 
 # View the last few rows of the data frame
-tail(data_frame)
+tail(data_frame) 
+# Will give the same results as head(data_frame) since the 
+# data frame has only 5 rows. However, in a data frame with more rows, this
+# will show the last 6 rows by default.
 
-# View the last 10 rows of the data frame
-tail(data_frame, n = 10)
+# View the last 3 rows of the data frame
+tail(data_frame, n = 3)
 
 ### The summary() function ----
 # Generate a summary of the data frame
